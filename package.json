@@ -1,0 +1,20 @@
+{
+  "name": "api_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "headless:smoke": "npx cypress run -b chrome --spec 'cypress/e2e/apiTesting.cy.js'",
+    "headless:regression": "npx cypress run -b chrome --spec cypress/e2e/JWTtoken.cy.js --headless",
+    "dev:run": "npx cypress run -b firefox -s cypress/e2e/apiTesting.cy.js",
+    "qa:run": "npx cypress open --env username=dime3@dime.com,password=654321",
+    "repo:run": "npx cypress run --record --key f3aa12c0-4d00-4800-99e4-219054bbe22e"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.15.1",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}
